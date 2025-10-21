@@ -1,0 +1,22 @@
+{
+  "name": "@dx/mcp-client",
+  "version": "1.0.0",
+  "description": "TypeScript client for Bun-DX MCP servers",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "bun build index.ts --outdir .",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": ["bun", "dx", "mcp", "typescript", "ai"],
+  "author": "brendadeeznuts1111",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brendadeeznuts1111/bun-dx.git",
+    "directory": "packages/mcp-client"
+  },
+  "peerDependencies": {
+    "bun-dx": "^1.0.0"
+  }
+}

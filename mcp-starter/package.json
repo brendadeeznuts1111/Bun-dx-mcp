@@ -1,0 +1,21 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "Bun-DX MCP starter template - AI-assisted development with MCP servers",
+  "scripts": {
+    "dev": "bun dev",
+    "build": "bun build src/index.ts",
+    "start": "bun run build && bun src/index.js"
+  },
+  "dependencies": {
+    "bun-dx": "^1.0.0"
+  },
+  "devDependencies": {
+    "bun": "latest"
+  },
+  "keywords": ["bun", "dx", "mcp", "ai", "template"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brendadeeznuts1111/bun-dx-mcp-starter.git"
+  }
+}

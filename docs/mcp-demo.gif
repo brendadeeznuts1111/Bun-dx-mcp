@@ -1,0 +1,5 @@
+# MCP Demo GIF Placeholder
+# Replace this file with: vhs demo.tape
+# The tape file demonstrates:
+# - dx mcp search 'stripANSI'
+# - dx mcp db 'select count(*) from users'

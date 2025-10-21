@@ -1,0 +1,14 @@
+{
+  "name": "bun-dx/mcp-starter",
+  "description": "Bun-DX MCP starter template with AI-assisted development tools",
+  "tags": ["bun", "dx", "mcp", "ai", "starter"],
+  "version": "1.0.0",
+  "repository": "https://github.com/brendadeeznuts1111/bun-dx-mcp-starter",
+  "author": "brendadeeznuts1111",
+  "license": "MIT",
+  "features": {
+    "mcp": true,
+    "ai-assisted": true,
+    "bun-dx": true
+  }
+}

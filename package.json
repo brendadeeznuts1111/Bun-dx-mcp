@@ -1,0 +1,23 @@
+{
+  "name": "@bun-dx/mcp",
+  "version": "1.0.0",
+  "description": "MCP (Model Context Protocol) integration for Bun-DX - AI-assisted development tools",
+  "scripts": {
+    "build": "bun run packages/mcp-client/build",
+    "publish:mcp-client": "cd packages/mcp-client && bun publish",
+    "release": "bun run build && bun run publish:mcp-client"
+  },
+  "keywords": ["bun", "dx", "mcp", "ai", "model-context-protocol"],
+  "author": "brendadeeznuts1111",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brendadeeznuts1111/Bun-dx-mcp.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "bun": "latest"
+  }
+}
