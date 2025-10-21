@@ -105,7 +105,7 @@ Bun-DX MCP
 
 ## 🤝 Contributing
 
-See the main [Bun-DX repository](https://github.com/brendadeeznuts1111/bun-dx) for contribution guidelines.
+See the main [Bun-DX repository](https://github.com/brendadeeznuts1111/Bun-dx-mcp) for contribution guidelines.
 
 ## 📄 License
 

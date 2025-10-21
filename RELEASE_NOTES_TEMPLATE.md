@@ -28,7 +28,7 @@ dx mcp tools      # List available tools
 
 ```bash
 # Install Bun-DX (MCP servers install automatically)
-curl -fsSL https://github.com/brendadeeznuts1111/bun-dx/raw/main/install.sh | bash
+curl -fsSL https://github.com/brendadeeznuts1111/Bun-dx-mcp/raw/main/install.sh | bash
 
 # Create MCP-powered project
 bun create bun-dx/mcp-starter my-ai-app
