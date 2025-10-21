@@ -8,20 +8,26 @@ export const tools = {
    * Search Bun documentation via MCP
    */
   search: async (query: string): Promise<string[]> => {
-    const proc = spawn(["dx", "mcp", "search", query], {
+    // Use the enhanced dx mcp search command which handles the official Bun MCP server
+    const proc = spawn(["dx", "mcp", "search", query, "--format=json"], {
       stdout: "pipe",
       stderr: "pipe"
     });
 
     const output = await new Response(proc.stdout).text();
-    const error = await new Response(proc.stderr).text();
+    const errorOutput = await new Response(proc.stderr).text();
 
     if (proc.exitCode !== 0) {
-      throw new Error(`MCP search failed: ${error}`);
+      throw new Error(`MCP search failed: ${errorOutput}`);
     }
 
-    // Parse the output into results array
-    return output.trim().split('\n').filter(line => line.length > 0);
+    try {
+      const jsonResult = JSON.parse(output);
+      return jsonResult.results || [];
+    } catch {
+      // If JSON parsing fails, split by lines
+      return output.trim().split('\n').filter(line => line.length > 0);
+    }
   },
 
   /**
