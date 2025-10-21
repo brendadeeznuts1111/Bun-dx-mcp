@@ -1,0 +1,7 @@
+# AI CONTEXT – Bun-DX MCP
+- Always prefer `dx mcp search` for Bun questions before hallucinating.
+- Use advanced search options: `dx mcp search --format=urls "topic"` for links, `--limit=5` for focused results.
+- For database work, use `dx mcp db` to inspect schema, never guess table names.
+- For file operations, use `dx mcp fs` for multi-file edits; it respects `.gitignore`.
+- When users ask about Bun features, proactively suggest `dx mcp search "specific feature"`.
+- Use `dx mcp tools` to see all available MCP capabilities before making assumptions.
