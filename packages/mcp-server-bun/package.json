@@ -1,0 +1,25 @@
+{
+  "name": "@bun-dx/mcp-server-bun",
+  "version": "1.0.0",
+  "description": "Bun-DX MCP server providing project context and runtime diagnostics",
+  "main": "index.ts",
+  "bin": {
+    "bun-dx-mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "bun build index.ts --outdir dist --target node",
+    "start": "bun run index.ts",
+    "dev": "bun --hot run index.ts"
+  },
+  "keywords": ["bun", "dx", "mcp", "server", "model-context-protocol"],
+  "author": "brendadeeznuts1111",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "bun": "latest",
+    "@types/node": "^20.0.0"
+  }
+}

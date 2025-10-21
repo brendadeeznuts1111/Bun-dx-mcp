@@ -10,11 +10,22 @@ export declare const tools: {
   search: (query: string) => Promise<string[]>;
 
   /**
-   * Execute SQL queries on the project database via MCP
-   * @param sql - SQL query string
-   * @returns Query results as unknown array
+   * Database operations via MCP
    */
-  db: (sql: string) => Promise<unknown[]>;
+  db: {
+    /**
+     * Execute SQL statements (INSERT, UPDATE, CREATE, etc.)
+     * @param sql - SQL statement to execute
+     */
+    exec: (sql: string) => Promise<void>;
+
+    /**
+     * Execute SELECT queries and return results
+     * @param sql - SELECT query string
+     * @returns Query results as unknown array
+     */
+    query: (sql: string) => Promise<unknown[]>;
+  };
 
   /**
    * Filesystem operations via MCP

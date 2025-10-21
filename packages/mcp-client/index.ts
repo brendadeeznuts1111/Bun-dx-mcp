@@ -25,26 +25,48 @@ export const tools = {
   },
 
   /**
-   * Execute SQL queries on the project database via MCP
+   * Database operations via MCP
    */
-  db: async (sql: string): Promise<unknown[]> => {
-    const proc = spawn(["dx", "mcp", "db", sql], {
-      stdout: "pipe",
-      stderr: "pipe"
-    });
+  db: {
+    /**
+     * Execute SQL statements (INSERT, UPDATE, CREATE, etc.)
+     */
+    exec: async (sql: string): Promise<void> => {
+      const proc = spawn(["dx", "mcp", "db", sql], {
+        stdout: "pipe",
+        stderr: "pipe"
+      });
 
-    const output = await new Response(proc.stdout).text();
-    const error = await new Response(proc.stderr).text();
+      const output = await new Response(proc.stdout).text();
+      const error = await new Response(proc.stderr).text();
 
-    if (proc.exitCode !== 0) {
-      throw new Error(`MCP database query failed: ${error}`);
-    }
+      if (proc.exitCode !== 0) {
+        throw new Error(`MCP database exec failed: ${error}`);
+      }
+    },
 
-    try {
-      return JSON.parse(output);
-    } catch {
-      // If not JSON, return as string array
-      return output.trim().split('\n').filter(line => line.length > 0);
+    /**
+     * Execute SELECT queries and return results
+     */
+    query: async (sql: string): Promise<unknown[]> => {
+      const proc = spawn(["dx", "mcp", "db", sql], {
+        stdout: "pipe",
+        stderr: "pipe"
+      });
+
+      const output = await new Response(proc.stdout).text();
+      const error = await new Response(proc.stderr).text();
+
+      if (proc.exitCode !== 0) {
+        throw new Error(`MCP database query failed: ${error}`);
+      }
+
+      try {
+        return JSON.parse(output);
+      } catch {
+        // If not JSON, return as string array
+        return output.trim().split('\n').filter(line => line.length > 0);
+      }
     }
   },
 

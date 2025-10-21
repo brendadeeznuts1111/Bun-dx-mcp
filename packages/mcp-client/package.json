@@ -16,7 +16,4 @@
     "url": "https://github.com/brendadeeznuts1111/bun-dx.git",
     "directory": "packages/mcp-client"
   },
-  "peerDependencies": {
-    "bun-dx": "^1.0.0"
-  }
 }

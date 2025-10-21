@@ -15,7 +15,8 @@
     "url": "https://github.com/brendadeeznuts1111/Bun-dx-mcp.git"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "mcp-starter"
   ],
   "devDependencies": {
     "bun": "latest"
