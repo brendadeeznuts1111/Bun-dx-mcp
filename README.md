@@ -19,6 +19,28 @@ const users = await tools.db('SELECT * FROM users');
 const content = await tools.fs('read', 'package.json');
 ```
 
+### [@bun-dx/mcp-server-bun](packages/mcp-server-bun/)
+MCP server providing intelligent Bun project context and runtime diagnostics.
+
+```bash
+# Install globally
+bun add -g @bun-dx/mcp-server-bun
+
+# Run the server
+bunx @bun-dx/mcp-server-bun
+```
+
+**Available Tools:**
+- `get_project_info` - Project configuration and structure
+- `get_runtime_info` - Bun runtime diagnostics
+- `list_dependencies` - Dependency analysis
+- `analyze_package` - Bun-DX specific insights
+
+**Available Resources:**
+- `package.json` - Project configuration
+- `bunfig.toml` - Bun configuration
+- `tsconfig.json` - TypeScript configuration
+
 ## 🚀 Quick Start
 
 ### Install MCP Servers
@@ -65,10 +87,11 @@ Add to your MCP configuration (e.g., Cursor's `.cursor/mcp.json`):
 
 ```
 Bun-DX MCP
-├── packages/mcp-client/     # TypeScript client library
-├── mcp-starter/            # Project template
-├── demo.tape              # Terminal demo recording
-└── docs/                  # Documentation & assets
+├── packages/mcp-client/       # TypeScript client library
+├── packages/mcp-server-bun/   # Bun project MCP server
+├── mcp-starter/              # Project template
+├── demo.tape                 # Terminal demo recording
+└── docs/                     # Documentation & assets
 ```
 
 ## 📋 MCP Server List
@@ -76,6 +99,7 @@ Bun-DX MCP
 | Server | Package | Purpose |
 |--------|---------|---------|
 | `@bun/mcp-docs` | Documentation search | Access Bun docs instantly |
+| `@bun-dx/mcp-server-bun` | Project intelligence | Bun project context & runtime diagnostics |
 | `@dx/mcp-db` | Database operations | Query SQLite databases |
 | `@dx/mcp-fs` | Filesystem tools | File operations with gitignore |
 
